@@ -1,0 +1,120 @@
+body {
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+    outline:0;
+    overflow:hidden;
+}
+body * {
+    user-select:none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-drag: none;
+    -moz-user-drag: none;
+    -webkit-user-drag: none;
+}
+.newPage {
+    position:relative;
+    left:10px;
+    top:10px;
+    cursor:pointer;
+}
+.page {
+    background-color: rgb(230, 230, 230);
+    border-radius: 10px;
+    position: absolute;
+    left: 80px;
+    top: 80px;
+    box-shadow: 0 0 15px 2px black;
+}
+.wysiwyg {
+    position: absolute;
+    left: 12.5%;
+    top: 12%;
+    width: 75%;
+}
+counter {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.resize {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    bottom: 1px;
+}
+.delete {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+}
+.edit {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+}
+.content {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    overflow: auto;
+}
+.putName {
+    margin:0 auto;
+    width:650px;
+    height:100vh;
+    transform:translateY(40%);
+    text-align:center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.putName h1 {
+    margin:0;
+}
+.putName .tooManyChars {
+    width:100%;
+    margin:0;
+    position:absolute;
+    top:100px;
+    text-align:center;
+    color:red;
+    display:none;
+}
+.putName input {
+    border:0;
+    border-bottom:2px dotted black;
+    font-size:26px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top:10px;
+    width:400px;
+    color:crimson;
+
+}
+.putName input:focus {
+    outline:0;
+}
+.putName img {
+    width:45px;
+    height:45px;
+    position:absolute;
+    right:75px;
+    cursor:pointer;
+}
+.goBack {
+    position:absolute;
+    right:10px;
+    bottom:10px;
+    cursor:pointer;
+}

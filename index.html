@@ -1,0 +1,62 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Michał Grabowski"/>
+    <title>Magnetic Table</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script src="parameters.js"></script>
+    <script>
+        var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+
+        $(document).on("dragstart", "img", function () {
+            return false;
+        });
+
+        var app = angular.module("MagneticTable", ["ngRoute"]);
+
+        app.config(function ($routeProvider) {
+            $routeProvider
+            .when("/", {
+                templateUrl: "templates/start.html",
+                controller: "MagneticTable"
+            })
+            .when("/:name", {
+                templateUrl: "templates/board.html", 
+                controller: "MagneticTable"
+            })
+            .otherwise({
+                redirectTo: "/"
+            });
+        });
+    </script>
+
+    <!-- Controllers -->
+    <script src="controllers/MagneticTable.js"></script>
+
+    <!-- Directives -->
+    <script src="directives/content/content.js"></script>
+    <script src="directives/counter/counter.js"></script>
+    <script src="directives/delete/delete.js"></script>
+    <script src="directives/edit/edit.js"></script>
+    <script src="directives/page/page.js"></script>
+    <script src="directives/resize/resize.js"></script>
+    <script src="directives/wysiwyg/wysiwyg.js"></script>
+
+    <!-- Services -->
+    <script src="services/addingContent.js"></script>
+    <script src="services/deleting.js"></script>
+    <script src="services/editing.js"></script>
+    <script src="services/movement.js"></script>
+    <script src="services/resizing.js"></script>
+    <script src="services/restoreBoard.js"></script>
+    <script src="services/sendingData.js"></script>
+    <script src="services/tinymce.js"></script>
+</head>
+<body ng-app="MagneticTable" ng-controller="MagneticTable" ng-view>
+</body>
+</html>
